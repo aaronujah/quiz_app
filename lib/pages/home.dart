@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:quiz_app/pages/question.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -111,61 +114,81 @@ class _HomeState extends State<Home> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Material(
-                      borderRadius: BorderRadius.circular(20),
-                      elevation: 5.0,
-                      child: Container(
-                        width: 150,
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20)),
-                        child: Column(
-                          children: [
-                            Image.asset(
-                              "images/place.png",
-                              height: 80,
-                              width: 80,
-                              fit: BoxFit.cover,
-                            ),
-                            SizedBox(
-                              height: 20.0,
-                            ),
-                            Text("Place",
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 22.0,
-                                    fontWeight: FontWeight.w500)),
-                          ],
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Question(
+                                      category: "Place",
+                                    )));
+                      },
+                      child: Material(
+                        borderRadius: BorderRadius.circular(20),
+                        elevation: 5.0,
+                        child: Container(
+                          width: 150,
+                          padding: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Column(
+                            children: [
+                              Image.asset(
+                                "images/place.png",
+                                height: 80,
+                                width: 80,
+                                fit: BoxFit.cover,
+                              ),
+                              SizedBox(
+                                height: 20.0,
+                              ),
+                              Text("Place",
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 22.0,
+                                      fontWeight: FontWeight.w500)),
+                            ],
+                          ),
                         ),
                       ),
                     ),
-                    Material(
-                      borderRadius: BorderRadius.circular(20),
-                      elevation: 5.0,
-                      child: Container(
-                        width: 150,
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20)),
-                        child: Column(
-                          children: [
-                            Image.asset(
-                              "images/dog.png",
-                              height: 80,
-                              width: 80,
-                              fit: BoxFit.cover,
-                            ),
-                            SizedBox(
-                              height: 20.0,
-                            ),
-                            Text("Animals",
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 22.0,
-                                    fontWeight: FontWeight.w500)),
-                          ],
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Question(
+                                      category: "Animals",
+                                    )));
+                      },
+                      child: Material(
+                        borderRadius: BorderRadius.circular(20),
+                        elevation: 5.0,
+                        child: Container(
+                          width: 150,
+                          padding: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Column(
+                            children: [
+                              Image.asset(
+                                "images/dog.png",
+                                height: 80,
+                                width: 80,
+                                fit: BoxFit.cover,
+                              ),
+                              SizedBox(
+                                height: 20.0,
+                              ),
+                              Text("Animals",
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 22.0,
+                                      fontWeight: FontWeight.w500)),
+                            ],
+                          ),
                         ),
                       ),
                     )
@@ -180,61 +203,81 @@ class _HomeState extends State<Home> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Material(
-                      borderRadius: BorderRadius.circular(20),
-                      elevation: 5.0,
-                      child: Container(
-                        width: 150,
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20)),
-                        child: Column(
-                          children: [
-                            Image.asset(
-                              "images/fruit.png",
-                              height: 80,
-                              width: 80,
-                              fit: BoxFit.cover,
-                            ),
-                            SizedBox(
-                              height: 20.0,
-                            ),
-                            Text("Fruits",
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 22.0,
-                                    fontWeight: FontWeight.w500)),
-                          ],
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Question(
+                                      category: "Fruits",
+                                    )));
+                      },
+                      child: Material(
+                        borderRadius: BorderRadius.circular(20),
+                        elevation: 5.0,
+                        child: Container(
+                          width: 150,
+                          padding: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Column(
+                            children: [
+                              Image.asset(
+                                "images/fruit.png",
+                                height: 80,
+                                width: 80,
+                                fit: BoxFit.cover,
+                              ),
+                              SizedBox(
+                                height: 20.0,
+                              ),
+                              Text("Fruits",
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 22.0,
+                                      fontWeight: FontWeight.w500)),
+                            ],
+                          ),
                         ),
                       ),
                     ),
-                    Material(
-                      borderRadius: BorderRadius.circular(20),
-                      elevation: 5.0,
-                      child: Container(
-                        width: 150,
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20)),
-                        child: Column(
-                          children: [
-                            Image.asset(
-                              "images/objects.png",
-                              height: 80,
-                              width: 80,
-                              fit: BoxFit.cover,
-                            ),
-                            SizedBox(
-                              height: 20.0,
-                            ),
-                            Text("Objects",
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 22.0,
-                                    fontWeight: FontWeight.w500)),
-                          ],
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Question(
+                                      category: "Objects",
+                                    )));
+                      },
+                      child: Material(
+                        borderRadius: BorderRadius.circular(20),
+                        elevation: 5.0,
+                        child: Container(
+                          width: 150,
+                          padding: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Column(
+                            children: [
+                              Image.asset(
+                                "images/objects.png",
+                                height: 80,
+                                width: 80,
+                                fit: BoxFit.cover,
+                              ),
+                              SizedBox(
+                                height: 20.0,
+                              ),
+                              Text("Objects",
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 22.0,
+                                      fontWeight: FontWeight.w500)),
+                            ],
+                          ),
                         ),
                       ),
                     )
@@ -249,61 +292,81 @@ class _HomeState extends State<Home> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Material(
-                      borderRadius: BorderRadius.circular(20),
-                      elevation: 5.0,
-                      child: Container(
-                        width: 150,
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20)),
-                        child: Column(
-                          children: [
-                            Image.asset(
-                              "images/sports.png",
-                              height: 80,
-                              width: 80,
-                              fit: BoxFit.cover,
-                            ),
-                            SizedBox(
-                              height: 20.0,
-                            ),
-                            Text("Sports",
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 22.0,
-                                    fontWeight: FontWeight.w500)),
-                          ],
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Question(
+                                      category: "Sports",
+                                    )));
+                      },
+                      child: Material(
+                        borderRadius: BorderRadius.circular(20),
+                        elevation: 5.0,
+                        child: Container(
+                          width: 150,
+                          padding: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Column(
+                            children: [
+                              Image.asset(
+                                "images/sports.png",
+                                height: 80,
+                                width: 80,
+                                fit: BoxFit.cover,
+                              ),
+                              SizedBox(
+                                height: 20.0,
+                              ),
+                              Text("Sports",
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 22.0,
+                                      fontWeight: FontWeight.w500)),
+                            ],
+                          ),
                         ),
                       ),
                     ),
-                    Material(
-                      borderRadius: BorderRadius.circular(20),
-                      elevation: 5.0,
-                      child: Container(
-                        width: 150,
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20)),
-                        child: Column(
-                          children: [
-                            Image.asset(
-                              "images/random.png",
-                              height: 80,
-                              width: 80,
-                              fit: BoxFit.cover,
-                            ),
-                            SizedBox(
-                              height: 20.0,
-                            ),
-                            Text("Random",
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 22.0,
-                                    fontWeight: FontWeight.w500)),
-                          ],
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Question(
+                                      category: "Random",
+                                    )));
+                      },
+                      child: Material(
+                        borderRadius: BorderRadius.circular(20),
+                        elevation: 5.0,
+                        child: Container(
+                          width: 150,
+                          padding: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Column(
+                            children: [
+                              Image.asset(
+                                "images/random.png",
+                                height: 80,
+                                width: 80,
+                                fit: BoxFit.cover,
+                              ),
+                              SizedBox(
+                                height: 20.0,
+                              ),
+                              Text("Random",
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 22.0,
+                                      fontWeight: FontWeight.w500)),
+                            ],
+                          ),
                         ),
                       ),
                     )

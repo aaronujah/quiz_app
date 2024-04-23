@@ -1,4 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:quiz_app/Admin/add_quiz.dart';
 
 class AdminLogin extends StatefulWidget {
   const AdminLogin({super.key});
@@ -117,20 +120,25 @@ class _AdminLoginState extends State<AdminLogin> {
                         SizedBox(
                           height: 40.0,
                         ),
-                        Container(
-                          padding: EdgeInsets.symmetric(vertical: 12.0),
-                          margin: EdgeInsets.symmetric(horizontal: 20.0),
-                          width: MediaQuery.of(context).size.width,
-                          decoration: BoxDecoration(
-                              color: Colors.black,
-                              borderRadius: BorderRadius.circular(10)),
-                          child: Center(
-                            child: Text(
-                              "Login",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20.0,
-                                  fontWeight: FontWeight.bold),
+                        GestureDetector(
+                          onTap: () {
+                            LoginAdmin();
+                          },
+                          child: Container(
+                            padding: EdgeInsets.symmetric(vertical: 12.0),
+                            margin: EdgeInsets.symmetric(horizontal: 20.0),
+                            width: MediaQuery.of(context).size.width,
+                            decoration: BoxDecoration(
+                                color: Colors.black,
+                                borderRadius: BorderRadius.circular(10)),
+                            child: Center(
+                              child: Text(
+                                "Login",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.bold),
+                              ),
                             ),
                           ),
                         )
@@ -144,5 +152,29 @@ class _AdminLoginState extends State<AdminLogin> {
         ),
       ),
     );
+  }
+
+  LoginAdmin() {
+    FirebaseFirestore.instance.collection("Admin").get().then((snapshot) {
+      snapshot.docs.forEach((result) {
+        if (result.data()['id'] != usernamecontroller.text.trim()) {
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              content: Text(
+            "You id is not correct",
+            style: TextStyle(fontSize: 10.0),
+          )));
+        } else if (result.data()['password'] !=
+            userpasswordcontroller.text.trim()) {
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              content: Text(
+            "You password is not correct",
+            style: TextStyle(fontSize: 10.0),
+          )));
+        } else {
+          Route route = MaterialPageRoute(builder: (context) => AddQuiz());
+          Navigator.pushReplacement(context, route);
+        }
+      });
+    });
   }
 }
